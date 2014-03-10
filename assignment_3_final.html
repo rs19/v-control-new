@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>SVG Shapes</title>
+		<style>
+			#container {
+			
+				width: 600px;
+				height: 500px;
+				margin: 0 auto;
+				background-color:#2a3c70;
+				background-image:
+				radial-gradient(white, rgba(255,255,255,.2) 4px, transparent 40px),
+				radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+				radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+				radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+				background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
+				background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+				transform-style: preserve-3d;
+				-webkit-transform-style: preserve-3d;
+				transition-duration: 2ms;
+				-webkit-transition-duration: 2s;
+				animation: colors 5s;
+				-webkit-animation: colors 5s;
+				animation-iteration-count: infinite;
+				-webkit-animation-iteration-count: infinite;
+				perspective: 600px;
+				-webkit-perspective: 600px;
+				perspective-origin: 100px 100px;
+				-webkit-perspective-origin: 100px 100px;
+				
+
+			}
+			
+			
+			#container:hover {
+				transform: rotate3d(0, 0, 1, 20deg);
+				-webkit-transform: rotate3d(0, 0, 1, 20deg);
+				
+			}
+			
+
+			.circle1, .circle2, .circle3, .circle4 {
+				fill: none;
+				stroke:url(#gradient1);
+				stroke-width:13;
+				opacity: 0.8;
+				transform-origin: 50% 50%;
+				-webkit-transform-origin: 50% 50%;
+				animation: appear 3s;
+				-webkit-animation: appear 3s;
+				animation-iteration-count: infinite;
+				-webkit-animation-iteration-count: infinite;
+				animation-direction: alternate;
+				-webkit-animation-direction: alternate;
+			}
+			
+			.circle5 {
+				fill: none;
+				position: relative;
+				stroke:url(#gradient1);
+				stroke-width:1;
+				opacity: 0.8;
+				animation: appear2 3s;
+			
+				-webkit-animation: appear2 3s;
+				animation-iteration-count: infinite;
+				-webkit-animation-iteration-count: infinite;
+				animation-direction: alternate;
+				-webkit-animation-direction: alternate;
+
+			}
+			
+			@keyframes appear {
+				from {transform: rotateZ(0deg) scale(0, 0);}
+				to {transform: rotateZ(360deg) scale(1, 1);}
+			}
+
+
+			@-webkit-keyframes appear {
+				from {-webkit-transform: rotateZ(0deg) scale(0, 0);}
+				to {-webkit-transform: rotateZ(360deg) scale(1, 1);}
+			}
+			
+			@keyframes appear2 {
+				from {transform: rotateZ(0deg) scale(0, 0);}
+				to {transform: rotateZ(360deg) scale(.4, .4);}
+			}
+
+
+			@-webkit-keyframes appear2 {
+				from {-webkit-transform: rotateZ(0deg) scale(0, 0) ;}
+				to {-webkit-transform: rotateZ(360deg) scale(.4, .4) ;}
+			}
+			
+			circle:hover {
+				animation-play-state: paused;
+				-webkit-animation-play-state: paused; 
+			}
+			
+			circle:active {
+				background-color:red;
+			}
+			
+			#sports {
+				font-family: 'HelveticaNeue-Bold';
+				font-size:67px;
+				position: absolute;
+				color: white;
+				top:350px;
+				text-align: center;
+				padding-left: 60px;
+				transition: background-color 2s ease;
+				background-color: red;
+				
+			}
+			
+			#sports:hover {
+				background-color: blue;
+				
+			}
+
+			@keyframes colors {
+				0% {background: rgb(255, 0, 0)} /*red*/
+				33% {background: rgb(0, 0, 255)} /*blue*/
+				66% {background: rgb(0, 255, 0)} /*green*/
+				100% {background: rgb(255, 0, 0} /*red*/
+			}
+			
+			@-webkit-keyframes colors {
+				0% {background: rgb(255, 0, 0)} /*red*/
+				33% {background: rgb(0, 0, 255)} /*blue*/
+				66% {background: rgb(0, 255, 0)} /*green*/
+				100% {background: rgb(255, 0, 0} /*red*/
+			}
+	
+
+
+		</style>
+	</head>
+
+	<body>
+		<div id="container">
+			<div id="shapes">
+				<svg width="1000" height="700">
+					<defs>
+						<linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+							<stop offset="0%" stop-color="white" />
+							<stop offset="100%" stop-color="black" />
+						</linearGradient>
+					</defs>
+					
+					<defs>
+						<linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+							<stop offset="0%" stop-color="blue" />
+							<stop offset="100%" stop-color="cyan" />
+						</linearGradient>
+					</defs>
+					
+					<defs>
+						<linearGradient id="gradient3" x1="0%" y1="0%" x2="100%" y2="0%">
+							<stop offset="0%" stop-color="yellow" />
+							<stop offset="100%" stop-color="magenta" />
+						</linearGradient>
+					</defs>
+
+				
+					<circle class="circle1" cx="90" cy="150" r="80" />
+					
+					<circle class="circle2" cx="170" cy="250" r="80" />
+					
+					<circle class="circle3" cx="270" cy="150" r="80" />
+					
+					<circle class="circle4" cx="370" cy="250" r="80" />
+					
+						
+					<div id="sports"
+						<text  >SOCHI 2014!!!</text>
+					</div>
+				</svg>
+			</div>
+		</div>
+	</body>
+
+</html>
